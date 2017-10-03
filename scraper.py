@@ -35,3 +35,8 @@ class firstSpider(scrapy.Spider):
                 break
         
         return orgList
+
+    #TODO:
+    #1) Text processing on the list of orgs that are gotten when the webpage is crawled
+    #2) Start to map out each organization and research crawling the TOR network
+    #3) Setup the parser to handle user input as well as multiple webpages with links 
