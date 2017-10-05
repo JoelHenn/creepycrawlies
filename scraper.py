@@ -1,9 +1,13 @@
 import scrapy
 
 #First spider class
-class firstSpider(scrapy.Spider):
+class orgCrawler(scrapy.Spider):
     name = "FTO_spider"
     start_urls = ['https://www.state.gov/j/ct/rls/other/des/123085.htm']
+    
+    
+    def __init__(self, *args, **kwargs):
+        super(orgCrawler, self).__init__(*args, **kwargs)
     
     #Parse function for the spider class
     def parse(self, response):
@@ -33,8 +37,9 @@ class firstSpider(scrapy.Spider):
             #incase another group is added
             if 'Hizbul Mujahideen' in orgList[key]:
                 break
-        
+            
         return orgList
+
 
     #TODO:
     #1) Text processing on the list of orgs that are gotten when the webpage is crawled
